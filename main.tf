@@ -13,11 +13,11 @@ resource "huaweicloud_cce_cluster_v3" "cce_cluster" {
 
 resource "huaweicloud_cce_node_v3" "cce_node" {
   count                 = var.node_count
-  name                  = "my-cce-node-${count.index + 1}"
+  name                  = "cce-node-${count.index + 1}"
   cluster_id            = huaweicloud_cce_cluster_v3.cce_cluster.id
   flavor_id             = var.node_flavor_id
   os                    = var.node_os
-  key_pair              = var.key_pair
+  #key_pair              = var.key_pair
   root_volume {
     size        = var.root_volume_size
     volumetype  = "SATA"
