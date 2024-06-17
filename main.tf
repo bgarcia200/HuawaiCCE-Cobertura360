@@ -24,8 +24,8 @@ resource "huaweicloud_cce_cluster_v3" "cce_cluster" {
   container_network_cidr = var.container_network_cidr
   container_network_type = "overlay_l2"
 
-  extend_params {
-    cluster_external_ip = "auto"
+  extend_param {
+    clusterAZ = var.availability_zone
   }
 }
 
@@ -36,6 +36,7 @@ resource "huaweicloud_cce_node_v3" "cce_node" {
   flavor_id             = var.node_flavor_id
   os                    = var.node_os
   #key_pair              = var.key_pair
+
   root_volume {
     size        = var.root_volume_size
     volumetype  = "SATA"
@@ -49,6 +50,7 @@ resource "huaweicloud_cce_node_v3" "cce_node" {
   billing_mode         = "postPaid"
   availability_zone    = var.availability_zone
   iptype               = "5_bgp"
+  
   public_ip {
     bandwidth_size     = var.bandwidth_size
   }
