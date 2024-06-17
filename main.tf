@@ -24,8 +24,8 @@ resource "huaweicloud_cce_cluster_v3" "cce_cluster" {
   container_network_cidr = var.container_network_cidr
   container_network_type = "overlay_l2"
 
-  extend_param {
-    clusterAZ = var.availability_zone
+  extend_params {
+    cluster_az = var.availability_zone
   }
 }
 
@@ -35,7 +35,7 @@ resource "huaweicloud_cce_node_v3" "cce_node" {
   cluster_id            = huaweicloud_cce_cluster_v3.cce_cluster.id
   flavor_id             = var.node_flavor_id
   os                    = var.node_os
-  #key_pair              = var.key_pair
+  key_pair              = var.key_pair
 
   root_volume {
     size        = var.root_volume_size
