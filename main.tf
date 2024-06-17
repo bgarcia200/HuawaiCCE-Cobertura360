@@ -1,3 +1,20 @@
+terraform {
+  required_providers {
+    huaweicloud = {
+      source  = "huaweicloud/huaweicloud"
+      version = "~> 1.0"
+    }
+  }
+}
+
+provider "huaweicloud" {
+  auth_url     = var.auth_url
+  region       = var.region
+  access_key   = var.access_key
+  secret_key   = var.secret_key
+  project_name = var.project_name
+}
+
 resource "huaweicloud_cce_cluster_v3" "cce_cluster" {
   name                  = var.cluster_name
   cluster_type          = var.cluster_type
@@ -13,7 +30,7 @@ resource "huaweicloud_cce_cluster_v3" "cce_cluster" {
 
 resource "huaweicloud_cce_node_v3" "cce_node" {
   count                 = var.node_count
-  name                  = "cce-node-${count.index + 1}"
+  name                  = "my-cce-node-${count.index + 1}"
   cluster_id            = huaweicloud_cce_cluster_v3.cce_cluster.id
   flavor_id             = var.node_flavor_id
   os                    = var.node_os
