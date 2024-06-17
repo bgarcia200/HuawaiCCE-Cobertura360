@@ -5,4 +5,6 @@ secret_key       = "your-secret-key"
 project_name     = "your-project-name"
 vpc_id           = "existing-vpc-id"
 subnet_id        = "existing-subnet-id"
-
+key_pair         = "my-key-pair"
+flavor_id        = "cce.s1.small"  # Reemplaza con el flavor_id que obtuviste
+node_flavor_id   = "s3.large.2"    # Reemplaza con el flavor_id para los nodos
