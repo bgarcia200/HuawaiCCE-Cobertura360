@@ -35,7 +35,7 @@ resource "huaweicloud_cce_node_v3" "cce_node" {
   cluster_id            = huaweicloud_cce_cluster_v3.cce_cluster.id
   flavor_id             = var.node_flavor_id
   os                    = var.node_os
-  key_pair              = var.key_pair
+  #key_pair              = var.key_pair
 
   root_volume {
     size        = var.root_volume_size
@@ -47,14 +47,9 @@ resource "huaweicloud_cce_node_v3" "cce_node" {
     volumetype  = "SATA"
   }
 
-  billing_mode         = "postPaid"
+  billing_mode         = 0  # Use 0 for postPaid and 1 for prePaid
   availability_zone    = var.availability_zone
   iptype               = "5_bgp"
-  
-  public_ip {
-    bandwidth_size     = var.bandwidth_size
-  }
+  public_ip            = var.public_ip
 
-  vpc_id               = var.vpc_id
-  subnet_id            = var.subnet_id
 }

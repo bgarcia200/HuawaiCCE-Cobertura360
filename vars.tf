@@ -103,3 +103,15 @@ variable "bandwidth_size" {
   type        = number
   default     = 10
 }
+
+variable "public_ip" {
+  description = "The configuration for the public IP."
+  type        = object({
+    bandwidth_size = number
+    eip_type       = string
+  })
+  default = {
+    bandwidth_size = 10
+    eip_type       = "5_bgp"
+  }
+}
