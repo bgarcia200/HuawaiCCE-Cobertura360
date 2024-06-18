@@ -81,3 +81,21 @@ variable "os" {
 variable "image_name" {
   default = "EulerOS 2.5 64bit"
 }
+
+
+variable "region" {
+  description = "Region for Huawei Cloud"
+  type        = string
+}
+
+variable "access_key" {
+  description = "Access Key for Huawei Cloud"
+  type        = string
+}
+
+variable "secret_key" {
+  description = "Secret Key for Huawei Cloud"
+  type        = string
+}
+
+
