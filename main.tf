@@ -11,10 +11,6 @@ provider "huaweicloud" {
   region     = var.region
   access_key = var.access_key
   secret_key = var.secret_key
-
-  endpoints {
-    iam = "https://iam.la-mexico-city-2.myhuaweicloud.com"
-  }
 }
 
 resource "huaweicloud_vpc" "myvpc" {

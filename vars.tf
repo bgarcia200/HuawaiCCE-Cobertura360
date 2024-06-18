@@ -1,7 +1,7 @@
 variable "region" {
   description = "Region for Huawei Cloud"
   type        = string
-  default     = "la-mexico-city-2"  # Asegúrate de que la región sea correcta
+  default     = "la-mexico-city-2"
 }
 
 variable "access_key" {
