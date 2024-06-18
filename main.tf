@@ -46,6 +46,7 @@ data "huaweicloud_availability_zones" "myaz" {}
 resource "huaweicloud_compute_keypair" "mykeypair" {
   name = var.key_pair_name
 }
+
 resource "huaweicloud_cce_cluster" "mycce" {
   name                   = var.cce_cluster_name
   flavor_id              = var.cce_cluster_flavor

@@ -82,10 +82,10 @@ variable "image_name" {
   default = "EulerOS 2.5 64bit"
 }
 
-
 variable "region" {
   description = "Region for Huawei Cloud"
   type        = string
+  default     = "la-mexico-city-2"  # Cambia esto a la región correcta sin espacios
 }
 
 variable "access_key" {
@@ -97,5 +97,7 @@ variable "secret_key" {
   description = "Secret Key for Huawei Cloud"
   type        = string
 }
+
+# Define otras variables según sea necesario
 
 
