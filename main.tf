@@ -29,20 +29,8 @@ resource "huaweicloud_vpc_subnet" "mysubnet" {
   vpc_id        = huaweicloud_vpc.myvpc.id
 }
 
-resource "huaweicloud_vpc_eip" "myeip" {
-  publicip {
-    type = "5_bgp"
-  }
-  bandwidth {
-    name        = var.bandwidth_name
-    size        = 8
-    share_type  = "PER"
-    charge_mode = "traffic"
-  }
-}
+
 
 data "huaweicloud_availability_zones" "myaz" {}
 
-resource "huaweicloud_compute_keypair" "mykeypair" {
-  name = var.key_pair_name
-}
+
