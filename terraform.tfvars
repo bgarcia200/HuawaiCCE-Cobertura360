@@ -8,3 +8,5 @@ subnet_id        = "existing-subnet-id"
 key_pair         = "my-key-pair"
 flavor_id        = "cce.s1.small"  # Reemplaza con el flavor_id que obtuviste
 node_flavor_id   = "s3.large.2"    # Reemplaza con el flavor_id para los nodos
+bandwidth_size   = 10
+eip_type         = "5_bgp"
