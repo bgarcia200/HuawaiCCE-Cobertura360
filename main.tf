@@ -50,11 +50,5 @@ resource "huaweicloud_cce_node_v3" "cce_node" {
   billing_mode         = 0  # Use 0 for postPaid and 1 for prePaid
   availability_zone    = var.availability_zone
   iptype               = "5_bgp"
-
-  public_ip {
-    eip {
-      bandwidth_size = var.bandwidth_size
-      type           = var.eip_type
-    }
-  }
+  public_ip            = "auto"
 }
