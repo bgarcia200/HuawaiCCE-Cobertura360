@@ -1,111 +1,83 @@
-variable "auth_url" {
-  description = "The authentication URL for Huawei Cloud."
-  type        = string
+variable "vpc_name" {
+  default = "vpc-basic"
 }
 
-variable "region" {
-  description = "The region for Huawei Cloud."
-  type        = string
+variable "vpc_cidr" {
+  default = "172.16.0.0/16"
 }
 
-variable "access_key" {
-  description = "The access key for Huawei Cloud."
-  type        = string
+variable "subnet_name" {
+  default = "subent-basic"
 }
 
-variable "secret_key" {
-  description = "The secret key for Huawei Cloud."
-  type        = string
+variable "subnet_cidr" {
+  default = "172.16.10.0/24"
 }
 
-variable "project_name" {
-  description = "The project name for Huawei Cloud."
-  type        = string
+variable "subnet_gateway" {
+  default = "172.16.10.1"
 }
 
-variable "vpc_id" {
-  description = "The ID of the existing VPC."
-  type        = string
+variable "primary_dns" {
+  default = "100.125.1.250"
 }
 
-variable "subnet_id" {
-  description = "The ID of the existing subnet."
-  type        = string
+variable "secondary_dns" {
+  default = "100.125.21.250"
 }
 
-variable "cluster_name" {
-  description = "The name of the CCE cluster."
-  type        = string
-  default     = "my-cce-cluster"
+variable "bandwidth_name" {
+  default = "mybandwidth"
 }
 
-variable "cluster_type" {
-  description = "The type of the CCE cluster."
-  type        = string
-  default     = "VirtualMachine"
+variable "key_pair_name" {
+  default = "mykey_pair"
 }
 
-variable "flavor_id" {
-  description = "The flavor ID for the CCE cluster."
-  type        = string
-  default     = "cce.s1.small"
+variable "cce_cluster_name" {
+  default = "mycce"
 }
 
-variable "container_network_cidr" {
-  description = "The CIDR block for the container network."
-  type        = string
-  default     = "172.16.0.0/16"
+variable "cce_cluster_flavor" {
+  default = "cce.s1.small"
 }
 
-variable "node_count" {
-  description = "The number of nodes in the cluster."
-  type        = number
-  default     = 3
+variable "node_name" {
+  default = "mynode"
 }
 
-variable "node_flavor_id" {
-  description = "The flavor ID for the nodes."
-  type        = string
-  default     = "s3.large.2"
-}
-
-variable "node_os" {
-  description = "The OS for the nodes."
-  type        = string
-  default     = "EulerOS 2.2"
-}
-
-variable "key_pair" {
-  description = "The key pair for the nodes."
-  type        = string
+variable "node_flavor" {
+  default = "t6.large.2"
 }
 
 variable "root_volume_size" {
-  description = "The size of the root volume for the nodes."
-  type        = number
-  default     = 40
+  default = 40
+}
+
+variable "root_volume_type" {
+  default = "SAS"
 }
 
 variable "data_volume_size" {
-  description = "The size of the data volume for the nodes."
-  type        = number
-  default     = 100
+  default = 100
 }
 
-variable "availability_zone" {
-  description = "The availability zone for the nodes."
-  type        = string
-  default     = "az1"
+variable "data_volume_type" {
+  default = "SAS"
 }
 
-variable "bandwidth_size" {
-  description = "The bandwidth size for the public IP of the nodes."
-  type        = number
-  default     = 10
+variable "ecs_flavor" {
+  default = "sn3.large.2"
 }
 
-variable "eip_type" {
-  description = "The type of EIP."
-  type        = string
-  default     = "5_bgp"
+variable "ecs_name" {
+  default = "myecs"
+}
+
+variable "os" {
+  default = "EulerOS 2.5"
+}
+
+variable "image_name" {
+  default = "EulerOS 2.5 64bit"
 }
